@@ -11,7 +11,7 @@ gulp 是一種可以自動偵測執行、轉換(sass/scss -> css)的npm套件工
 
 安裝完後，在命令提示字元裡指定專案路徑 (cd XXXXX)
 
-- [執行 gulp]
+- [輸入 gulp] (啟動gulp)
 
 即可偵測有變動過的 sass/scss 、 javascript 檔案
 
