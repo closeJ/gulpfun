@@ -4,6 +4,8 @@ gulp 是一種可以自動偵測執行、轉換(sass/scss -> css)的npm套件工
 
 必須先安裝 [node.js](https://nodejs.org/en/)
 
+開啟命令提示字元 -> `cd "自己專案路徑" ` 安裝以下 gulp 相關套件 : 
+
 1. gulp 套件 - npm install gulp --save-dev (在專案下安裝)
 2. gulp sass 套件 - npm install gulp-sass 
 3. gulp uglify 套件 - 壓縮 javascript 檔案、減少容量 - npm install gulp-uglify 
