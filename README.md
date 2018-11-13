@@ -17,6 +17,7 @@ gulp 是一種可以自動偵測執行、轉換(sass/scss -> css)的npm套件工
 
 <hr>
 
+```
 gulp
 [00:48:31] Using gulpfile C:\wamp\www\gulpped\gulpfile.js
 [00:48:31] Starting 'default'...
@@ -27,3 +28,4 @@ gulp
 [00:48:54] Finished 'minify' after 1.83 ms
 [00:48:59] Starting 'minify'...
 [00:48:59] Finished 'minify' after 1.32 ms
+```
