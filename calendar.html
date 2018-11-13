@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id="container">
+        <div class="calendar-table">
+        </div>
+    </div>
+
+<script>
+    $(function(){
+        let today = new Date();
+        let nowYear = today.getFullYear();
+        let nowMonth = today.getMonth() + 1;
+        let nowDate = today.getDate();
+        let calendarTable = $(".calendar-table");
+
+        //取得當月總天數
+        let nowDateNum = new Date(nowYear,nowMonth,0).getDate();
+        //每個月的第一天
+        let firstDays = new Date(nowYear,nowMonth,1);
+        let firstDay = firstDays.getDay();
+        let date = 0;
+
+        const month = ["1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"];
+        const day = ["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+
+        all_calender(nowDateNum,calendarTable,month);
+
+        function all_calender(length,calendarTable,day) {
+            for (let x = 0; x < 9; x++) {
+                $(calendarTable).append("<div class='row'>");
+                for (let j = 1; j <= 6; j++) {
+                    date++;
+                    if (date <= nowDateNum && (x > 0 || j >= firstDay)) {
+                        $(calendarTable).find('.row').append("<div class='cell'>" + date + "</div>");
+                    }
+                }
+                $(calendarTable).append("</div>");
+            }
+        }
+    });
+</script>
+</body>
+</html>

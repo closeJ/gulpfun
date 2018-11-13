@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+</head>
+<body>
+	<!-- banner 圖片區 -->
+	<div id="banner-area">
+		<div class="banner-inner">
+			<ul class="banner-list"></ul>
+
+			<!-- 小圓點區域 -->
+			<ul class="circle-area"></ul>
+		</div>
+	</div>
+	<script>
+		$(function(){
+			var imageName = ["bcg_slide-1","bcg_slide-2","bcg_slide-3","bcg_slide-4"] ,
+			    bannerArea = $("#banner-area"),
+				index = 0;
+			$.each(imageName,function(index,value){
+				$(bannerArea).find('.banner-list').append("<li><img src=" + 'image/' + value + '.jpg' + "></li>");
+			});
+
+			for(var i = 0; i < imageName.length; i++) {
+				$(".circle-area").append("<li></li>");
+			}
+
+			//每秒自動輪播banner
+			setInterval(function(){
+				banner_slide(bannerArea,index);
+				index++;
+
+				if (index == imageName.length) {
+					index = 0;
+				}
+			},1000);
+
+			//廣告輪播用
+			function banner_slide(selecter,index) {
+				var moveWidth = $(selecter).find('li').eq(index).width();
+				$(selecter).find('li').eq(index).animate({"left":moveWidth * -1},500);
+			}
+		});
+
+	</script>
+</body>
+</html>

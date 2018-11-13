@@ -1,0 +1,1 @@
+$(function(){$("#cowbe").validate({rules:{name:"required",nickname:{required:!0,maxlength:8}}}),$(".bt").click(function(){if($("#cowbe").valid()){var e=$("#cowbe")[0],a=new FormData(e),t=$("#images").prop("files");a.append("images",t),$.ajax({url:"../aram/store.php",type:"post",data:a,cache:!1,contentType:!1,processData:!1,dataType:"text"}).done(function(e){console.log(e)})}})});
